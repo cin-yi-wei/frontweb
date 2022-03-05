@@ -1,0 +1,67 @@
+body>h2{
+    margin: 0 auto;
+    text-align: center;
+}
+
+hr{
+    background: red;
+    width: 30px;   
+    height: 3px;
+    border: 0px;
+}
+
+.title{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title h2::after {
+    display: block;
+    content: "";
+    border-top: .2rem solid red;
+    width: 25%;
+    margin: 0 auto;
+    transform: translateY(0.5rem);
+}
+
+body{
+    margin: 0px;
+    font-family: 微軟正黑體;
+}
+body>div{
+    display: flex;
+    width: 960px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+figure>img{
+    border-radius: 20px;
+}
+
+div>a{
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    width: 25%; 
+    text-decoration:none;
+}
+a>figure{
+    margin: 0px;
+}
+figure:hover h3{
+    color: red;
+}
+
+
+figcaption>h3{
+    color: black;
+    font-size: 20px;
+}
+
+figcaption>p{
+    color: rgb(100, 100, 100);
+    font-size: 10px;
+}
