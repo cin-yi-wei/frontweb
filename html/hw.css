@@ -29,23 +29,22 @@ body{
     margin: 0px;
     font-family: 微軟正黑體;
 }
-body>div{
+body>section{
     display: flex;
-    width: 960px;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0 auto;
+    margin: 0 170px;
 }
 
 figure>img{
     border-radius: 20px;
+    width: 390px;
+    height: 240px;
 }
 
-div>a{
-    padding: 10px;
-    margin: 10px;
+section>a{
     text-align: center;
-    width: 25%; 
+    width: 30%; 
     text-decoration:none;
 }
 a>figure{
