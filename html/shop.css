@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+}
+
+li {
+  position: relative;
+  display: inline-block;
+}
+.opt-nav {
+  display: inline-block;
+  text-align: right;
+  height: 40px;
+  top: 0px;
+  /* margin: 20px; */
+  /* height: 40px; */
+  background: rgb(0, 20, 45);
+  color: #dfe2e5;
+}
+.opt-nav > ui {
+  line-height: 40px;
+}
+
+.main-nav {
+  display: flex;
+  top: 40px;
+  height: 84px;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  z-index: 1;
+  color: #324255;
+  box-shadow: 0px 0.5px 15px rgb(167, 167, 167);
+}
+.main-nav > img {
+  width: 160px;
+  height: 27px;
+}
+.main-nav > img,
+.main-nav > button {
+  margin: 22px;
+}
+.main-nav > ui {
+  margin: 22px;
+  flex-grow: 1;
+}
+
+.start-shop {
+  margin-top: 120px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #aaa;
+}
+
+.container {
+  width: 600px;
+  height: 588px;
+}
+
+.title > h2 {
+  font-size: 40px;
+  color: #fff;
+  margin: 20px;
+  margin-top: 170px;
+}
+
+.container p {
+  color: #fff;
+  margin: 20px;
+}
+.email {
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  margin: 20px;
+}
+::placeholder {
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+
+.free {
+  text-align: center;
+  margin: 20px;
+}
+
+.start-shop > img {
+  width: 625px;
+  object-fit: contain;
+}
+
+.mirror {
+  display: flex;
+  justify-content: center;
+  margin: 110px;
+}
+.mirror > .contain {
+  width: 40%;
+}
+.mirror > .contain ui {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 103px;
+  font-size: 15px;
+  justify-content: space-around;
+  /* align-content: space-around; */
+}
+.mirror > .contain li {
+  margin: 5px 0;
+}
+.mirror > img {
+  width: 600px;
+  object-fit: contain;
+}
+
+.mirror:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.mirror a {
+  display: block;
+}
