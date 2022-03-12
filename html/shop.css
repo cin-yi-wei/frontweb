@@ -1,6 +1,10 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: 微軟正黑體;
+}
+a {
+  text-decoration: none;
 }
 
 nav {
@@ -55,6 +59,7 @@ li {
   margin-top: 120px;
   display: flex;
   justify-content: space-around;
+  background-image: url(https://img.shoplineapp.com/media/image_clips/5f069a12dc4d9a00335656c2/original.png?1594268177);
   background-color: #aaa;
 }
 
@@ -63,7 +68,7 @@ li {
   height: 588px;
 }
 
-.title > h2 {
+.container > .title > h2 {
   font-size: 40px;
   color: #fff;
   margin: 20px;
@@ -101,35 +106,43 @@ li {
   justify-content: center;
   margin: 110px;
 }
-.mirror::after {
+/*  */
+.mirror:not(.manage)::after,
+.recommend .partner_icon::after {
   content: "";
   position: absolute;
+  display: block;
   top: 100%;
   width: 100%;
   height: 0.5px;
   background: rgb(221, 221, 221);
+  z-index: -2;
   /* box-shadow: 0px 0.1px 30px rgb(233, 233, 233); */
 }
 
-.mirror > .contain {
+.mirror > .content {
   width: 40%;
 }
 
-.mirror > .contain > .title {
+.mirror > .content > .title {
   font-size: 35px;
 }
 
-.mirror > .contain ui {
+.mirror > .content > p {
+  font-size: 17px;
+  margin: 15px 0;
+}
+.mirror > .content ui {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   height: 103px;
-  font-size: 15px;
   justify-content: space-around;
   /* align-content: space-around; */
 }
-.mirror > .contain li {
-  margin: 5px 0;
+.mirror > .content li {
+  font-size: 15px;
+  margin: 4px 0;
 }
 .mirror > img {
   width: 600px;
@@ -142,4 +155,126 @@ li {
 
 .mirror a {
   display: block;
+}
+.morefunction {
+  padding: 70px 55px;
+  background-color: #f4f5f7;
+}
+
+.morefunction .title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bolder;
+}
+
+.morefunction .wrap {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.morefunction .wrap li {
+  flex: 33%;
+  text-align: center;
+  margin: 50px 0;
+  padding: auto;
+}
+
+.morefunction .wrap li img {
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+  border-radius: 50%;
+  object-fit: scale-down;
+  box-shadow: 0 0 5px #d4d4d4;
+}
+.morefunction .wrap li h4 {
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 30px;
+}
+.morefunction .wrap li p {
+  width: 305px;
+  margin: 10px auto;
+}
+
+.recommend {
+  width: 85%;
+  margin: 40px auto;
+}
+
+.recommend .title > span {
+  color: #0061ff;
+}
+.recommend .title {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 600;
+}
+.recommend .partner_icon {
+  position: relative;
+  text-align: center;
+}
+.recommend .partner_icon > li > img {
+  width: 230px;
+  height: 230px;
+  object-fit: scale-down;
+  object-position: 50% 50%;
+}
+.recommend .wrap {
+  display: flex;
+  margin: 20px 0;
+}
+.recommend .wrap .content {
+  position: relative;
+}
+.recommend .wrap .content .text {
+  margin-top: 20px;
+}
+
+.recommend .wrap .content .author {
+  position: absolute;
+  bottom: 0;
+}
+
+.use {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-image: url(https://img.shoplineapp.com/media/image_clips/5f069a1114b23b004875a301/original.png?1594268176);
+  background-color: #172b4d;
+  color: #f4f5f7;
+  height: 370px;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: 70% 100%;
+}
+.use > .content > .slogan {
+  position: relative;
+  margin-right: 10px;
+  font-size: 30px;
+  margin: 30px 0;
+  display: inline;
+  z-index: 1;
+}
+
+.use > .content > .slogan::after {
+  content: "";
+  position: absolute;
+  /* border-top: 15px solid #0061ff; */
+  background: #0061ff;
+  display: block;
+  top: 50%;
+  width: 100%;
+  height: 11px;
+  z-index: -1;
+}
+
+.use > .world_png {
+  align-self: flex-end;
+  left: 300px;
+  top: 100px;
+  object-fit: scale-down;
+  height: 60%;
 }
