@@ -10,7 +10,7 @@ a {
 nav {
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 99;
 }
 
 li {
@@ -108,7 +108,9 @@ li {
 }
 /*  */
 .mirror:not(.manage)::after,
-.recommend .partner_icon::after {
+.recommend .partner_icon::after,
+.use::after,
+footer > .footerbottom::after {
   content: "";
   position: absolute;
   display: block;
@@ -239,6 +241,7 @@ li {
 }
 
 .use {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -250,25 +253,29 @@ li {
   background-repeat: no-repeat;
   background-size: 70% 100%;
 }
+
 .use > .content > .slogan {
-  position: relative;
-  margin-right: 10px;
-  font-size: 30px;
-  margin: 30px 0;
-  display: inline;
-  z-index: 1;
+  font-size: 37px;
 }
 
-.use > .content > .slogan::after {
+.use > .content > .slogan > span {
+  position: relative;
+  margin-right: 10px;
+  z-index: 1;
+}
+.use > .content > .slogan > span::after {
   content: "";
   position: absolute;
-  /* border-top: 15px solid #0061ff; */
+  border-top: 15px solid #0061ff;
   background: #0061ff;
   display: block;
-  top: 50%;
+  bottom: 20%;
   width: 100%;
-  height: 11px;
+  height: 1px;
   z-index: -1;
+}
+.use > .content > button {
+  margin-top: 40px;
 }
 
 .use > .world_png {
@@ -277,4 +284,63 @@ li {
   top: 100px;
   object-fit: scale-down;
   height: 60%;
+}
+footer section {
+  color: #fff;
+  position: relative;
+  background-color: #00142d;
+}
+footer .footerlist {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  position: relative;
+  padding-top: 50px;
+}
+footer .footerlist ul li {
+  display: block;
+  margin-bottom: 20px;
+  color: #748094;
+}
+footer .footerlist ul li:first-child {
+  color: #fff;
+  margin-bottom: 40px;
+}
+.use::after {
+  top: 110%;
+  background: #193d6d;
+  z-index: 3;
+}
+
+footer > section > button {
+  position: absolute;
+  bottom: -100px;
+  right: 120px;
+  z-index: 3;
+}
+footer > .footerbottom {
+  padding-top: 200px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: space-around;
+}
+footer > .footerbottom::after {
+  top: 50%;
+  background: #193d6d;
+  z-index: 3;
+}
+footer > .footerbottom > .service_time {
+  font-size: 14px;
+  color: #748094;
+}
+.social_network li img {
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  background-color: #fff;
+  color: #fff;
+  border-radius: 50%;
+  object-fit: scale-down;
+  object-position: 50% 50%;
+  margin: 5px;
 }
