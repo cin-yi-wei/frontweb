@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            display: flex;
+            width: 500px;
+            height: 500px;
+            background: #aaa;
+  
+            flex-direction: column;
+            /* justify-content:flex-start; */
+
+            /* flex-wrap:wrap;   */
+            /* 提供換行彈性列*/
+
+            /* align-content:stretch; */
+            /*計算彈性列的位置，如果沒有wrap代表只有一個彈性列，故無法設定彈性列起始位置*/  
+
+            /* align-items:center; */
+            /* 彈性列的排列方式，以最大值為基準*/
+
+            /*writing-mode: vertical-lr;*/
+        }
+        .item{
+            width: 100px;
+            height: 100px;
+            padding: 12px;
+            margin: 30px;
+            border: 3px solid red;
+            background-color: #00f;
+            color: aliceblue;
+            box-sizing: border-box;
+            font-size: large;
+            flex-shrink: 0;
+            /* margin: 30px; */
+        }
+        
+        .item:nth-child(-n+3){
+            background-color: #f70;
+        }
+        .i1{
+            /* align-self: flex-end; */
+            flex-shrink: 1;
+        }
+        .i2{
+            flex-basis: 250px;
+            flex-shrink: 1;
+            
+        }
+        .item:nth-child(-n+3){
+            flex-shrink: 1;
+        }
+        .i4{
+            flex-grow: 2; /* 把剩餘空間分配給單個物件，按後面的比例分配*/
+        }
+        .i5{
+            flex-grow: 1; 
+        }
+    </style>
+</head>
+<body >
+    <div class="wrap">
+        <div class="item i1">1中</div>
+        <div class="item i2">2中</div>
+        <div class="item i3">3中</div>
+<!--         
+        <div class="item i4">4中</div>
+        <div class="item i5">5中</div> -->
+
+        <!-- <div class="item">2中</div>
+        <div class="item">3中</div>
+        <div class="item">4中</div>
+        <div class="item">5中</div> -->
+    </div>
+    
+</body>
+</html>

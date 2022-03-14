@@ -1,6 +1,6 @@
 * {
-  padding: 0;
-  margin: 0;
+  /* padding: 0;
+  margin: 0; */
   font-family: 微軟正黑體;
 }
 a {
@@ -166,13 +166,14 @@ footer > .footerbottom::after {
 .morefunction .title {
   text-align: center;
   font-size: 26px;
-  font-weight: bolder;
+  /* font-weight: bolder; */
 }
 
 .morefunction .wrap {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  padding: 0;
   justify-content: space-around;
 }
 
@@ -219,8 +220,8 @@ footer > .footerbottom::after {
   text-align: center;
 }
 .recommend .partner_icon > li > img {
-  width: 230px;
-  height: 230px;
+  width: 200px;
+  height: 200px;
   object-fit: scale-down;
   object-position: 50% 50%;
 }
@@ -333,14 +334,21 @@ footer > .footerbottom > .service_time {
   font-size: 14px;
   color: #748094;
 }
+.social_network li {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 5px;
+}
 .social_network li img {
   width: 30px;
   height: 30px;
-  background: #fff;
+  transform: scale(1.2, 1.2);
   background-color: #fff;
-  color: #fff;
-  border-radius: 50%;
-  object-fit: scale-down;
+  object-fit: fill;
   object-position: 50% 50%;
-  margin: 5px;
+}
+.social_network li img:hover {
+  background-color: #2a63ff;
 }

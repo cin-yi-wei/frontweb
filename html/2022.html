@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            display: flex;
+            width: 100%;
+        }
+        .i1{
+            flex-shrink: 0;
+            width: 200px;
+            background-color: rgb(190, 13, 13);
+        }
+        .i2{
+            /*flex簡寫:
+            flex: grow shrink basis
+
+            */
+            flex-grow: 1;
+            background-color: rgb(33, 20, 211);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="item i1">1</div>
+        <div class="item i2">2</div>
+    </div>
+</body>
+</html>

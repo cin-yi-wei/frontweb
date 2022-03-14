@@ -8,9 +8,9 @@
   display: block;
   content: "";
   border-top: 0.2rem solid red;
-  width: 25%;
+  width: 50%;
   margin: 0 auto;
-  transform: translateY(0.5rem);
+  transform: translateY(1px);
 }
 
 body {
@@ -22,7 +22,7 @@ body > section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 170px;
+  margin: 0 130px;
 }
 
 figure > img {
@@ -61,6 +61,10 @@ body > a {
   border-radius: 20px;
   text-decoration: none;
   left: 50%;
+
+  /*
+  transform: translateX(-50%);
+  transform: translateY(20px);*/
   transform: translate(-50%, 20px);
   font-weight: bold;
 }

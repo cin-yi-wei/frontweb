@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .arrow{
+           width: 0px;
+           height: 0px;
+            border-right: 25px solid #0000;
+            /* border-left: 5px solid #0000; */
+            border-top: 25px solid red;
+
+        }
+
+        .two{
+            background-color: yellow;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            text-align: center;
+            line-height: 40px;
+        }
+        .two:after{
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 0px;
+            height: 0px;
+            border-right: 20px solid yellow;
+            border-left: 20px solid yellow; 
+            border-bottom: 20px solid #0000;
+        }
+        .circle{
+            width: 450px;
+            height: 450px;
+            background-color: #fa0;
+            margin: 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            /* object-fit: fill; */
+        }
+        .circle img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position:50% 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="arrow"></div>
+    <div class="two">9</div>
+    <div class="circle">
+        <img src="https://picsum.photos/600/400/?random=10">
+       
+    </div>
+</body>
+</html>

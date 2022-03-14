@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{
+            width: 100%;
+            display: flex;
+            justify-content:space-between
+        }
+        ui,nav{
+        
+        }
+        li{
+            display: inline-block;
+            margin: 10px;
+        }
+        li:hover::after{
+            content: " ";
+            display:block;
+            border-bottom: 2px solid red;
+            
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>五倍紅寶石 ・專業程式教育機構</h1>
+        <nav>
+            <ul>
+                <li class="item"><a href="#">ASTRO Camp</a> </li>
+                <li class="item"><a href="#">線上課程</a></li>
+                <li class="item"><a href="#">短期課程</a></li>
+                <li class="item"><a href="#">線上文章</a></li>
+                <li class="item"><a href="#">五倍消息</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
