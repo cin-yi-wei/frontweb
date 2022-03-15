@@ -17,37 +17,36 @@ class bst{
         return size === 0
     }
     add = (e) =>{
-        if (this.root == undefined){
-            this.root = new Node(e);
-            this.size++;
-        }else{
-            this.#add(this.root,e)
-        }
+        
+            this.root = this.#add(this.root,e)
+        
     }
     #add =(node,e) => {
-        console.log(node,e);
-        if(node.e < e && node.right == undefined){
-            node.right = new Node(e);
-            return;
-        }else if(node.e > e && node.left == undefined){
-            node.left = new Node(e);
-            return;
+        if(node == undefined){
+            this.size++;
+            return new Node(e);
         }
+        console.log("aaa",node);
         if(node.e < e){
-            this.#add(node.right,e);
+            node.right = this.#add(node.right,e);
         }else if(node.e > e){
-            this.#add(node.left,e);
+            node.left = this.#add(node.left,e);
         }
+        return node;
     }
 }
 
 let a = new bst();
 a.add(7);
+// console.log(a);
 a.add(4);
+// console.log(a);
 a.add(9);
+// console.log(a);
 a.add(5);
+// console.log(a);
 a.add(11);
-
-
-console.log(a.root);
+a.add(10);
+a.add(10);
+console.log(a);
 // console.log(a.root.e.left.e,a.root.e.right.e);
