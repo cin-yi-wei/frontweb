@@ -53,23 +53,75 @@ function divisionWithModulo(divisor , dividend) {
 // console.log(humanReadableTimer(216001));
 
 
+
+
+// function numberToTWCurrency(amount,depth) {
+//     // 123 % 10  10^1 = 3 / (10^(1-1))
+//     if(depth == 4) return 0;
+//     let a = amount % 10**depth;
+//     console.log("a",depth,a);
+//     let b = numberToTWCurrency (a,depth+1);
+//     console.log( "b",depth,b);
+//     // console.log("a-b",(a-b)/10**(depth-1),depth);
+//     return a;
+// }
+
 // 123 % 1000  10^3 = 123 -23 = 100  / (10^(3-1)) =1
 // 123 % 100  10^2 = 23-3 = 20 / (10^(2-1)) = 2
 // 123 % 10  10^1 = 3 / (10^(1-1))
-let digit =["億","仟萬","佰萬","拾萬","萬","仟","佰","拾","元整"]; 
-function numberToTWCurrency(amount,depth) {
-    // 123 % 10  10^1 = 3 / (10^(1-1))
+let str = "";
+let flag = 0;
+let prev = [];
+let digit =["元整","拾","佰","仟","萬","拾","佰","仟", "億","拾","佰","仟", "兆","拾","佰","仟" ]; 
+let num = ["零","壹","貳","參","肆","伍","陸","柒","捌","玖"];
+let l = 0;
+function numberToTWCurrency(amount) {
+    reset();
+    let money = amount;
+    while(money !== 0){
+        money = Math.floor( money / 10);
+        l++;
+    }
+    recursive(amount,l);
+   return str;
+}
+
+function reset(){
+    str = "";
+    flag = 0;
+    prev = [];
+    l = 0;
+}
+
+function recursive(amount,depth){
     if(depth == 0) return 0;
     let a = amount % 10**depth;
-    // console.log("a",depth,a);
-    let b = numberToTWCurrency (a,depth-1);
+    // console.log("a",depth,a,amount);
+    let b = recursive(a,depth-1);
     // console.log( "b",depth,b);
-    console.log("a-b",(a-b)/10**(depth-1),depth);
+    let val = (a-b)/10**(depth-1);
+    prev.push(val);
+    // console.log(  val , b ,depth,  Boolean(val) && !Boolean(prev[prev.length-2])   );
+    if(val == 0   ){
+        if(depth % 4 == 1) str = str.replace(/(.{0})/,digit[depth-1]);
+        if(depth % 4 == 0){
+            str = str.replace(/(.{0})/,"零");
+            flag = 0;
+        }
+        // console.log("into",digit[depth],depth);
+        if (!Boolean(val) && Boolean(prev[prev.length-2]) ) flag = 1; //負緣觸發
+    }else{
+        if(flag == 1){
+            // console.log( "into2",digit[depth],depth );
+            str = str.replace(/(.{0})/,"零");
+        }
+        str = str.replace(/(.{0})/, num[val] + digit[depth-1])
+        flag = 0;
+    }
     return a;
 }
-  
-  console.log(numberToTWCurrency(1234,4))    // 印出 壹仟肆佰伍拾圓整
-//   console.log(numberToTWCurrency(817))     // 印出 捌佰壹拾柒圓整
-//   console.log(numberToTWCurrency(9527))    // 印出 玖仟伍佰貳拾柒圓整
-//   console.log(numberToTWCurrency(120000))  // 印出 壹拾貳萬圓整
-//   console.log(numberToTWCurrency(1000001)) // 印出 壹佰萬零壹
+console.log(numberToTWCurrency(1234)) ;   // 印出 壹仟肆佰伍拾圓整
+console.log(numberToTWCurrency(817))     // 印出 捌佰壹拾柒圓整
+console.log(numberToTWCurrency(9527))    // 印出 玖仟伍佰貳拾柒圓整
+console.log(numberToTWCurrency(120000))  // 印出 壹拾貳萬圓整
+console.log(numberToTWCurrency(1001100110011010)) // 印出 壹佰萬零壹
