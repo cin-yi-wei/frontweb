@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: #f9fafb;
+}
+
+img {
+  border-radius: 50%;
+}
+
+.block {
+  background-color: #fff;
+}

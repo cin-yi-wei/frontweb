@@ -1,0 +1,138 @@
+/* 紅黑
+385 350
+*/
+
+/* 灰
+444 296
+*/
+
+/* 字
+681 274
+*/
+
+/* 車
+695
+430
+*/
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "微軟正黑體";
+}
+.wrap {
+  width: 960px;
+  margin: 150px auto 400px;
+  position: relative;
+}
+.video {
+  width: 695px;
+  height: 430px;
+  display: block;
+  margin: 0 auto;
+  background-color: #000;
+  margin-top: 60px;
+  /* vertical-align: top; */
+}
+
+.icon {
+  width: 50px;
+  height: 25px;
+  background-color: rgb(252, 16, 16);
+  position: relative;
+  z-index: 1;
+  left: 800px;
+  bottom: 250px;
+  border-radius: 3px;
+}
+.icon_right {
+  left: 100px;
+}
+.icon::after {
+  content: "";
+  /* background-color: rgb(80, 14, 14); */
+  position: absolute;
+  left: 14px;
+  top: 3px;
+  display: inline-block;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 20px solid #fff;
+}
+
+.title {
+  width: 385px;
+  height: 350px;
+  position: absolute;
+  background-color: red;
+  top: -100px;
+  left: 0;
+  z-index: 2;
+}
+.title_right {
+  left: 700px;
+}
+.top {
+  height: 100px;
+  color: aliceblue;
+  background-color: red;
+}
+.num {
+  display: inline-block;
+  writing-mode: vertical-lr;
+  font-size: 90px;
+  /* line-height: 90px; */
+}
+.name {
+  display: inline-block;
+  font-size: 60px;
+  line-height: 100px;
+  vertical-align: top;
+}
+.bottom {
+  height: calc(100% - 100px);
+  background-color: black;
+  color: aliceblue;
+  line-height: 30px;
+  font-weight: 400;
+  padding: 30px 30px;
+  box-sizing: border-box;
+}
+
+.content {
+  width: 680px;
+  /* height: 275px; */
+  position: absolute;
+  background-color: #eee;
+  bottom: -200px;
+  left: 0;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.content_right {
+  left: 300px;
+}
+.content > h3::after {
+  content: "";
+  display: inline-block;
+  background-color: red;
+  width: 70%;
+  height: 2px;
+  transform: translateY(-4px);
+}
+
+.content > span {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #000;
+  color: aliceblue;
+}
+
+.grey {
+  width: 445px;
+  height: 295px;
+  position: absolute;
+  background-color: #eee;
+  top: -50px;
+  right: 0;
+  z-index: -1;
+}
