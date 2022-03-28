@@ -13,6 +13,21 @@ const addListener = (upComponent,downComponent,listener,fn) => {
 	})
 }
 
+addListener("BUTTON","I",document.querySelector(".cart > button"),(target) =>{
+	target.parentNode.children[1].children[1].innerHTML = "";
+	let allPrice =  document.querySelector("tfoot td:nth-child(3)");
+	allPrice.textContent = "$0";
+	// console.log(target); 
+	//.remove();
+});
+
+addListener("BUTTON","I",document.querySelector("tbody"),(target) =>{
+	let tr = target.parentNode.parentNode;
+	let allPrice =  document.querySelector("tfoot td:nth-child(3)");
+	allPrice.textContent = "$" + (Number(allPrice.textContent.slice(1))
+								-Number(tr.children[3].textContent.slice(1))).toString();
+	tr.remove();
+});
 addListener("BUTTON","I",document.querySelector(".container > .items"),(target) => {
 	let name = target.parentNode.children[0].textContent;
 	let price = target.parentNode.children[1].textContent;
@@ -27,18 +42,18 @@ addListener("BUTTON","I",document.querySelector(".container > .items"),(target) 
 									+ Number(price.slice(1))).toString();
 	}else{
 		let insert = `
-					<tr>
-					<td>${name}</td>
-					<td><input type="number" value="1" /></td>
-					<td>${price}</td>
-					<td>${price}</td>
-					<td>
-						<button class="btn btn-danger btn-sm">
-						<i class="fas fa-trash-alt"></i>
-						</button>
-					</td>
-					</tr>
-					`
+			<tr>
+			<td>${name}</td>
+			<td><input type="number" value="1" /></td>
+			<td>${price}</td>
+			<td>${price}</td>
+			<td>
+			<button class="btn btn-danger btn-sm">
+			<i class="fas fa-trash-alt"></i>
+			</button>
+			</td>
+			</tr>
+			`
 		document.querySelector("tbody").insertAdjacentHTML("beforeend",insert);
 	}
 	let allPrice =  document.querySelector("tfoot td:nth-child(3)");
